@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @datacentter.code %>
+</p>
+
+<p>
+  <b>Server available:</b>
+  <%= @datacentter.server_available %>
+</p>
+
+<p>
+  <b>Server capacity:</b>
+  <%= @datacentter.server_capacity %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @datacentter.country_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_datacentter_path(@datacentter) %> |
+<%= link_to 'Back', datacentters_path %>

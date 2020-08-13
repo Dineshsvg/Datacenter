@@ -1,0 +1,33 @@
+<%= form_for(@datacentter) do |f| %>
+  <% if @datacentter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datacentter.errors.count, "error") %> prohibited this datacentter from being saved:</h2>
+
+      <ul>
+      <% @datacentter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :server_available %><br />
+    <%= f.text_field :server_available %>
+  </div>
+  <div class="field">
+    <%= f.label :server_capacity %><br />
+    <%= f.text_field :server_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :country_id %><br />
+    <%= f.collection_select :country_id,Country.all,'id','name' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
